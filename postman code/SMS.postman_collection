@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "9ecb1295-59ab-4fd4-8336-3a84f22ff8cc",
+		"name": "Nexmo Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SMS API",
+			"item": [
+				{
+					"name": "Send SMS",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "from",
+									"value": "{{vonage_one}}",
+									"type": "text"
+								},
+								{
+									"key": "text",
+									"value": "The answer is 42",
+									"type": "text"
+								},
+								{
+									"key": "to",
+									"value": "{{in_number}}",
+									"type": "text"
+								},
+								{
+									"key": "api_secret",
+									"value": "{{api_secret}}",
+									"type": "text"
+								},
+								{
+									"key": "api_key",
+									"value": "{{api_key}}",
+									"type": "text"
+								}
+							],
+							"options": {
+								"urlencoded": {}
+							}
+						},
+						"url": {
+							"raw": "https://rest.nexmo.com/sms/json",
+							"protocol": "https",
+							"host": [
+								"rest",
+								"nexmo",
+								"com"
+							],
+							"path": [
+								"sms",
+								"json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send SMS with delivery receipt",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "from",
+									"value": "{{in_number}}",
+									"type": "text"
+								},
+								{
+									"key": "text",
+									"value": "The answer is 42",
+									"type": "text"
+								},
+								{
+									"key": "to",
+									"value": "{{sg_number}}",
+									"type": "text"
+								},
+								{
+									"key": "api_secret",
+									"value": "{{api_secret}}",
+									"type": "text"
+								},
+								{
+									"key": "api_key",
+									"value": "{{api_key}}",
+									"type": "text"
+								},
+								{
+									"key": "callback",
+									"value": "{{ngnok_url}}/webhooks/dlr",
+									"type": "text"
+								}
+							],
+							"options": {
+								"urlencoded": {}
+							}
+						},
+						"url": {
+							"raw": "https://rest.nexmo.com/sms/json",
+							"protocol": "https",
+							"host": [
+								"rest",
+								"nexmo",
+								"com"
+							],
+							"path": [
+								"sms",
+								"json"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1OTg0MTg4OTYsImp0aSI6IjE1MTI5MTQwLWU3NWItMTFlYS05MmMxLTE5ZWUzZDM0YzM1NCIsImFwcGxpY2F0aW9uX2lkIjoiNTA0MWQ0ZjctNTU2YS00ZTA3LTk2ODgtYmUyYmM0MzlmNTc0In0.vU_JQFqz5o2HrF5yLTcxg5KmHEUygicwBm1VHjgN6Fy7tIZXSWkZIMRvocjkOdDYqFLVuitvrKtzRHhVu3RzupaInXFydxWb4b2uKLTRnSbsXjwuK76CXq9R0zMiXlILgN4y16MZ6Px8cvmcHkrLUBstjOHBOWJ1NHek4QOZNN4EGhcuAsqkVG3J6m8H6qCpFRqi7vL_E3j8k59sgFhoB3JJcIMnJnCWYMNqr8Vbi0pOVbvFexjtFBLDax_NJ_U3NDs9OmjM5FHIvscbmP0ae73QnLVLVHs_T9QBYqXIu5WGLdd2mFK23AVHcaKBVSNx7nXNCF88aTxlA1lAe9Ffuw",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "c32a41d2-62c4-43a1-a717-fa1e9401dcfc",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "80fb35a2-7d56-4edd-87cf-c6f7f5b5dad0",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
