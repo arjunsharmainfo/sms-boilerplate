@@ -1,0 +1,347 @@
+{
+	"info": {
+		"_postman_id": "aef838fe-5dad-4d8f-8c58-410236fa4c19",
+		"name": "SMS & Verify API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Verify API",
+			"item": [
+				{
+					"name": "Start Verification - SMS",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.nexmo.com/verify/json?api_key={{api_key}}&api_secret={{api_secret}}&number={{in_number}}&brand=Nexmo&next_event_wait=300",
+							"protocol": "https",
+							"host": [
+								"api",
+								"nexmo",
+								"com"
+							],
+							"path": [
+								"verify",
+								"json"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{api_key}}"
+								},
+								{
+									"key": "api_secret",
+									"value": "{{api_secret}}"
+								},
+								{
+									"key": "number",
+									"value": "{{in_number}}"
+								},
+								{
+									"key": "brand",
+									"value": "Nexmo"
+								},
+								{
+									"key": "next_event_wait",
+									"value": "300"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Start Verification - SMS as a POST request",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "api_key",
+									"value": "{{api_key}}",
+									"type": "text"
+								},
+								{
+									"key": "api_secret",
+									"value": "{{api_secret}}",
+									"type": "text"
+								},
+								{
+									"key": "number",
+									"value": "{{in_number}}",
+									"type": "text"
+								},
+								{
+									"key": "brand",
+									"value": "Nexmo",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.nexmo.com/verify/json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"nexmo",
+								"com"
+							],
+							"path": [
+								"verify",
+								"json"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{api_key}}",
+									"disabled": true
+								},
+								{
+									"key": "api_secret",
+									"value": "{{api_secret}}",
+									"disabled": true
+								},
+								{
+									"key": "number",
+									"value": "{{in_number}}",
+									"disabled": true
+								},
+								{
+									"key": "brand",
+									"value": "Nexmo",
+									"disabled": true
+								},
+								{
+									"key": "next_event_wait",
+									"value": "300",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check SMS",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.nexmo.com/verify/check/json?api_key={{api_key}}&api_secret={{api_secret}}&request_id=4d68957572fd442a9c7a72efec47ea10&code=1776",
+							"protocol": "https",
+							"host": [
+								"api",
+								"nexmo",
+								"com"
+							],
+							"path": [
+								"verify",
+								"check",
+								"json"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{api_key}}"
+								},
+								{
+									"key": "api_secret",
+									"value": "{{api_secret}}"
+								},
+								{
+									"key": "request_id",
+									"value": "4d68957572fd442a9c7a72efec47ea10"
+								},
+								{
+									"key": "code",
+									"value": "1776"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Verification",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.nexmo.com/verify/control/json?api_key={{api_key}}&api_secret={{api_secret}}&request_id=&cmd=cancel",
+							"protocol": "https",
+							"host": [
+								"api",
+								"nexmo",
+								"com"
+							],
+							"path": [
+								"verify",
+								"control",
+								"json"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{api_key}}"
+								},
+								{
+									"key": "api_secret",
+									"value": "{{api_secret}}"
+								},
+								{
+									"key": "request_id",
+									"value": ""
+								},
+								{
+									"key": "cmd",
+									"value": "cancel"
+								}
+							]
+						},
+						"description": "\n"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "SMS API",
+			"item": [
+				{
+					"name": "Send SMS",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "from",
+									"value": "{{vonage_default}}",
+									"type": "text"
+								},
+								{
+									"key": "text",
+									"value": "The answer is 42",
+									"type": "text"
+								},
+								{
+									"key": "to",
+									"value": "{{sg_number}}",
+									"type": "text"
+								},
+								{
+									"key": "api_secret",
+									"value": "{{api_secret}}",
+									"type": "text"
+								},
+								{
+									"key": "api_key",
+									"value": "{{api_key}}",
+									"type": "text"
+								}
+							],
+							"options": {
+								"urlencoded": {}
+							}
+						},
+						"url": {
+							"raw": "https://rest.nexmo.com/sms/json",
+							"protocol": "https",
+							"host": [
+								"rest",
+								"nexmo",
+								"com"
+							],
+							"path": [
+								"sms",
+								"json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send SMS with delivery receipt",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "from",
+									"value": "{{vonage_default}}",
+									"type": "text"
+								},
+								{
+									"key": "text",
+									"value": "The answer is 42",
+									"type": "text"
+								},
+								{
+									"key": "to",
+									"value": "{{sg_number}}",
+									"type": "text"
+								},
+								{
+									"key": "api_secret",
+									"value": "{{api_secret}}",
+									"type": "text"
+								},
+								{
+									"key": "api_key",
+									"value": "{{api_key}}",
+									"type": "text"
+								},
+								{
+									"key": "callback",
+									"value": "https://vonage.run.goorm.io/webhooks/dlr",
+									"type": "text"
+								}
+							],
+							"options": {
+								"urlencoded": {}
+							}
+						},
+						"url": {
+							"raw": "https://rest.nexmo.com/sms/json",
+							"protocol": "https",
+							"host": [
+								"rest",
+								"nexmo",
+								"com"
+							],
+							"path": [
+								"sms",
+								"json"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
