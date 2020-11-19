@@ -16,18 +16,3 @@ app.get('/', (req, res) => {
   res.json(200);
 });
 
-app.get('/webhooks/inward-sms', (req, res) => {
-  console.log(req.query);
-  res.json(200);
-});
-
-app.post('/chat-register', function (request, response) {
-  userANumber = request.body.userANumber;
-  userBNumber = request.body.userBNumber;
-  //your code here
-
-  response.json({status: "chat between " + userANumber + ' and ' + userBNumber,
-    userANumber: 'virtual number 1',
-    userBNumber: 'virtual number 2'}
-  );
-});
